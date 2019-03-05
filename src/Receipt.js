@@ -27,9 +27,8 @@ class Receipt {
   calculateTaxiCost() {
     let preTaxiCost = this.getPreTaxiCost();
     let postTaxiCost = this.getPostTaxiCost();
-    let taxiCost = preTaxiCost + postTaxiCost;
     
-    return taxiCost ;
+    return preTaxiCost + postTaxiCost;
   }
 
   getPreTaxiCost() {
