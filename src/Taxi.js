@@ -6,7 +6,7 @@ const PRE_RATE_CHARGE_AC_RATE = 20;
 const POST_RATE_CHARGE_AC_RATE = 17;
 const RATE_CHARGE_DISTANCE = 10;
 
-class Taxi{
+class TaxiOrder{
   constructor(airConditioned, totalKms, peakTime) {
     this.airConditioned = airConditioned;
     this.totalKms = totalKms;
@@ -47,4 +47,4 @@ class Taxi{
 
 }
 
-export default Taxi;
+export default TaxiOrder;
