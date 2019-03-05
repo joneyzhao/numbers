@@ -19,17 +19,24 @@ class Receipt {
     totalCost += FIXED_CHARGE;
 
     // taxi charges
-    let totalKms = this.taxi.getTotalKms();
-    let peakTimeMultiple = this.taxi.isPeakTime() ? PEAK_TIME_MULTIPLIER : OFF_PEAK_MULTIPLIER;
-    if(this.taxi.isAirConditioned()) {
-        totalCost += Math.min(RATE_CHANGE_DISTANCE, totalKms) * PRE_RATE_CHANGE_AC_RATE * peakTimeMultiple;
-        totalCost += Math.max(0, totalKms - RATE_CHANGE_DISTANCE) * POST_RATE_CHANGE_AC_RATE * peakTimeMultiple;
-    } else {
-        totalCost += Math.min(RATE_CHANGE_DISTANCE, totalKms) * PRE_RATE_CHANGE_NON_AC_RATE * peakTimeMultiple;
-        totalCost += Math.max(0, totalKms - RATE_CHANGE_DISTANCE) * POST_RATE_CHANGE_NON_AC_RATE * peakTimeMultiple;
-    }
+    totalCost += this.calculateTaxiCharges();
 
     return totalCost * (1 + SALES_TAX_RATE);
+  }
+
+  calculateTaxiCharges() {
+    let taxiCharges = 0;
+    let totalKms = this.taxi.getTotalKms();
+    let peakTimeMultiple = this.taxi.isPeakTime() ? PEAK_TIME_MULTIPLIER : OFF_PEAK_MULTIPLIER;
+    if (this.taxi.isAirConditioned()) {
+      taxiCharges += Math.min(RATE_CHANGE_DISTANCE, totalKms) * PRE_RATE_CHANGE_AC_RATE * peakTimeMultiple;
+      taxiCharges += Math.max(0, totalKms - RATE_CHANGE_DISTANCE) * POST_RATE_CHANGE_AC_RATE * peakTimeMultiple;
+    }
+    else {
+      taxiCharges += Math.min(RATE_CHANGE_DISTANCE, totalKms) * PRE_RATE_CHANGE_NON_AC_RATE * peakTimeMultiple;
+      taxiCharges += Math.max(0, totalKms - RATE_CHANGE_DISTANCE) * POST_RATE_CHANGE_NON_AC_RATE * peakTimeMultiple;
+    }
+    return taxiCharges;
   }
 }
 
