@@ -25,20 +25,30 @@ class Receipt {
   }
 
   calculateTaxiCost() {
-    let taxiCost = 0;
+    let preTaxiCost = this.getPreTaxiCost();
+    let postTaxiCost = this.getPostTaxiCost();
+    let taxiCost = preTaxiCost + postTaxiCost;
+    
+    return taxiCost ;
+  }
+
+  getPreTaxiCost() {
     let totalKms = this.taxi.getTotalKms();
     let peakTimeMultiple = this.getPeakTimeMultiple();
     let preChargingInterval = Math.min(RATE_CHARGE_DISTANCE, totalKms);
+    return preChargingInterval * this.getPreACRate() * peakTimeMultiple;
+  }
+  getPostTaxiCost() {
+    let totalKms = this.taxi.getTotalKms();
+    let peakTimeMultiple = this.getPeakTimeMultiple();
     let postChargingInterval = Math.max(0, totalKms - RATE_CHARGE_DISTANCE);
-
-    taxiCost = preChargingInterval * this.getPreACRate() + postChargingInterval * this.getPostACRate()
-
-    return taxiCost * peakTimeMultiple;
+    return postChargingInterval * this.getPostACRate() * peakTimeMultiple;
   }
 
   getPeakTimeMultiple() {
     return this.taxi.isPeakTime() ? PEAK_TIME_MULTIPLIER : OFF_PEAK_MULTIPLIER;
   }
+
   getPreACRate() {
     return this.taxi.isAirConditioned() ? PRE_RATE_CHARGE_AC_RATE : PRE_RATE_CHARGE_NON_AC_RATE;
   }
