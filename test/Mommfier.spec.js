@@ -19,7 +19,7 @@ describe('Mommfier', () => {
   });
 
   it('should mommify the string which has vowels more than 30%', () => {
-    expect('his').to.equal(Mommfier.mommify('hmommifys'));
+    expect('hmommifys').to.equal(Mommfier.mommify('his'));
   });
 
   it('should not mommify the string which has vowels less than 30%', () => {
