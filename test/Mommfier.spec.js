@@ -18,6 +18,10 @@ describe('Mommfier', () => {
     expect('mommify').to.equal(Mommfier.mommify('aeiou'));
   });
 
+  it('should mommify zhh vowels', () => {
+    expect('bmommifybb').to.equal(Mommfier.mommify('baeioubb'));
+  });
+
   it('should mommify the string which has vowels more than 30%', () => {
     expect('hmommifys').to.equal(Mommfier.mommify('his'));
   });
