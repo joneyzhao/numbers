@@ -14,7 +14,7 @@ const Mommfier = {
     let vowelsCount = (str.match(REGSTR) || []).length;
     let vowelsRate = vowelsCount / str.length; 
 
-    return vowelsRate < THRESHOLD ? false : true;
+    return vowelsRate >= THRESHOLD;
   },
   modifiedStr: (str) => {
     let list = str.split('');
@@ -33,11 +33,11 @@ const Mommfier = {
     return expectStr;
   },
   isLastContinuousVowel: (index, list) => {
-    if (index >= list.length-1) {
-      return true;
-    } else {
-      return Mommfier.isVowel(list[index + 1]) ? false : true;
+    if(Mommfier.isVowel(list[index])) {
+      return !((list.length > index + 1) && Mommfier.isVowel(list[index + 1]))
     }
+
+    return  false;
   },
   isVowel: (s) => {
     return s.match(REGSTR) ? true : false;
