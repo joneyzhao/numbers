@@ -13,9 +13,9 @@ Bester是一个可以在一组相同物品中选出最好物品的类。
 - 确保安装了node 8.0 以上的版本
 - 安装了vscode/sublime
 - 有一台可以访问外网的电脑
-- 在项目根目录下运行`npm install`
+- 在项目根目录下运行`yarn`
 
 ## 开始操练
 
-- `npm install`
-- `npm test`
+- `yarn install`
+- `yarn test`
