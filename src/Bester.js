@@ -19,15 +19,15 @@ class Hall {
 
 const Bester = {
   chooseTheBest: (items) => { 
-    var maxValue = items[0];
+    var besterOne = items[0];
 
     for (let i = 0; i < items.length - 1; i++) {
       if (Bester.calculate(items[i]) < Bester.calculate(items[i+1])) {
-        maxValue = items[i+1];
+        besterOne = items[i+1];
       }
     }
     
-    return maxValue;
+    return besterOne;
   },
   calculate: (item) => {
     let result = 0;
