@@ -34,9 +34,6 @@ const Bester = {
     var besterOne = items[0];
 
     for (let i = 1; i < items.length; i++) {
-      // if (Bester.calculate(items[i]) < Bester.calculate(items[i+1])) {
-      //   besterOne = items[i+1];
-      // }
       console.log('besterOne.isBetterThan(items[i])===' + besterOne.isBetterThan(items[i]))
       if (items[i].isBetterThan(besterOne)) {
         besterOne = items[i];
@@ -44,19 +41,7 @@ const Bester = {
     }
     
     return besterOne;
-  },
-  // calculate: (item) => {
-  //   let result = 0;
-
-  //   if (item instanceof Hall) {
-  //     result = item.radius;
-  //   } else if (item instanceof TV) {
-  //     result = item.width * item.height;
-  //   } else {
-  //     result = item.chocolateNumber;
-  //   }
-  //   return result;
-  // }
+  }
 }
 
 
