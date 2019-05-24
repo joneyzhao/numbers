@@ -1,4 +1,4 @@
-class Oreo {
+class Oreo{
   constructor(chocolateNumber) {
     this.chocolateNumber = chocolateNumber;
   }
@@ -34,7 +34,6 @@ const Bester = {
     var besterOne = items[0];
 
     for (let i = 1; i < items.length; i++) {
-      console.log('besterOne.isBetterThan(items[i])===' + besterOne.isBetterThan(items[i]))
       if (items[i].isBetterThan(besterOne)) {
         besterOne = items[i];
       }
