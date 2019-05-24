@@ -1,12 +1,16 @@
-# Bester 编程操练 nodejs 版本
+# number 编程操练 nodejs 版本
 
-Bester是一个可以在一组相同物品中选出最好物品的类。
-例如我们有一包奥利奥（Oreo），每个奥利奥上都有巧克力。那么哪个奥利奥最好呢？对于一个吃货来说，当然是上面巧克力越多越好。
-当前的代码测试用例跑不过，因为Bester没有被正确的实现，你有如下任务需要完成：
-1. 正确的实现Bester方法，让它可以选出最好的奥利奥
-2. 对于一个电视机，有长（Width）和宽（Length）。我们认为电视当然是越大越好了。请实现电视机类，并让Bester可以选出一个最好的电视机。
-3. 对于一个圆形的演出大厅，有半径（radius）。我们认为展厅越大越好。请实现展厅类，并让Bester可以选出一个最好的展厅。
-4. 完成了以上三步，请审视你的实现，思考有没有更好的实现方式。如果你了解过多态（polymorphism），请审视你的代码，是否可以用多态来实现？
+Write a program that prints the numbers from 1 to 100, but...
+
+numbers that are exact multiples of 3, 
+or that contain 3, must print a string containing "Fizz"
+   For example 9 -> "...Fizz..."
+   For example 31 -> "...Fizz..."
+
+numbers that are exact multiples of 5, 
+or that contain 5, must print a string containing "Buzz"
+   For example 10 -> "...Buzz..."
+   For example 51 -> "...Buzz..."
 
 ## 操练前准备工作
 
