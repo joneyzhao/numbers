@@ -7,9 +7,9 @@ describe('Should Style: Answer', () => {
     expect('1').to.equal(printNumbers.printsContents(1));
   });
 
-  // it('expect 2 is 1 2', () => {
-  //   expect('1,2').to.equal(printNumbers.printsContents(2));
-  // });
+  it('expect 2 is 1 2', () => {
+    expect('1,2').to.equal(printNumbers.printsContents(2));
+  });
 
   // it('expect 3 is 1 2 Fizz', () => {
   //   expect('1,2,Fizz').to.equal(printNumbers.printsContents(3));
