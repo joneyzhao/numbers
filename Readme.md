@@ -12,6 +12,12 @@ or that contain 5, must print a string containing "Buzz"
    For example 10 -> "...Buzz..."
    For example 51 -> "...Buzz..."
 
+   
+numbers that are exact multiples of 15, 
+or that contain 15, must print a string containing "Buzz"
+   For example 15 -> "...FizzBuzz..."
+   For example 30 -> "...FizzBuzz..."
+
 ## 操练前准备工作
 
 - 确保安装了node 8.0 以上的版本

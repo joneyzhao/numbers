@@ -3,6 +3,7 @@ const THREE = '3'
 const FIVE = '5'
 const THREE_REPLACEMENT = 'Fizz'
 const FIVE_REPLACEMENT = 'Buzz'
+const THREE_FIVE_REPLACEMENT = 'FizzBuzz'
 
 function IsIncludeNumOrIsMultiplesNum(inputNum, character) {
   return IsIncludeNum(inputNum, character) || IsMultiplesNum(inputNum, character)
@@ -20,14 +21,15 @@ function IsMultiplesNum(inputNum, character) {
 function printsContents(endNum) {
   let replaceList = []
   for (let i = 1; i <= endNum; i++) {
+    let str = '';
     if (IsIncludeNumOrIsMultiplesNum(i, THREE)) {
-      replaceList.push(THREE_REPLACEMENT)
-    } else if (IsIncludeNumOrIsMultiplesNum(i, FIVE)) {
-      replaceList.push(FIVE_REPLACEMENT)
-    } else {
-      replaceList.push(i)
+      str = THREE_REPLACEMENT
     }
+    if (IsIncludeNumOrIsMultiplesNum(i, FIVE)) {
+      str += FIVE_REPLACEMENT
+    }
+    replaceList.push(str || i)
   }
-  return endNum > 15 ? replaceList.length : replaceList.join(',')
+  return replaceList.join(',')
 }
 export default { printsContents };
