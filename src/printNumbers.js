@@ -17,7 +17,7 @@ function IsMultiplesNum(inputNum, character) {
   return inputNum % character === 0
 }
 
-function printsNumbers(endNum) {
+function printsContents(endNum) {
   let replaceList = []
   for (let i = 1; i <= endNum; i++) {
     if (IsIncludeNumOrIsMultiplesNum(i, THREE)) {
@@ -31,4 +31,4 @@ function printsNumbers(endNum) {
   return endNum > 15 ? replaceList.length : replaceList.join(',')
 }
 
-export default { printsNumbers };
+export default { printsContents };
